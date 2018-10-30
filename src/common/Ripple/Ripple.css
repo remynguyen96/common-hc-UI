@@ -1,0 +1,37 @@
+:root {
+  --size-ripple: 8rem;
+  --spacing-ripple: 50%;
+  --position-ripple: 50%;
+  --animation-scale-small: 0.4;
+  --animation-scale-medium: 0.6;
+  --animation-scale-big: 0.7;
+  --animation-scale-bigest: 1;
+  --animation-delay-slow: .4s;
+  --animation-delay-medium: .6s;
+  --bg-whiteRed-0: rgba(255, 202, 202, 0);
+  --bg-whiteRed-6: rgba(255, 202, 202, 0.6);
+  --bg-whiteRed-9: rgba(255, 255, 255, 0.9);
+}
+
+.rippleWrapper {
+  position: absolute;
+  pointer-events: none;
+  top: var(--position-ripple);
+  left: var(--position-ripple);
+  height: var(--size-ripple);
+  width: var(--size-ripple);
+  border-radius: var(--spacing-ripple);
+  background-color: var(--bg-whiteRed-6);
+  transform: translateX(calc(var(--spacing-ripple) * -1)) translateY(calc(var(--spacing-ripple) * -1)) scale(var(--animation-scale-small));
+  transition: transform var(--animation-delay-slow), background-color var(--animation-delay-medium);
+}
+
+.rippleWrapper.rippleIn {
+  background-color: var(--bg-whiteRed-9);
+  transform: translateX(calc(var(--spacing-ripple) * -1)) translateY(calc(var(--spacing-ripple) * -1)) scale(var(--animation-scale-big));
+}
+
+.rippleWrapper.rippleOut {
+  background-color: var(--bg-whiteRed-0);
+  transform: translateX(calc(var(--spacing-ripple) * -1)) translateY(calc(var(--spacing-ripple) * -1)) scale(var(--animation-scale-bigest));
+}

@@ -1,0 +1,45 @@
+:root {
+  --input-height: 40px;
+  --input-label-color: #767676;
+  --image-max-height: calc(2 * var(--unit));
+}
+.container {
+  position: relative;
+  height: var(--input-height);
+  border-bottom: solid 2px var(--color-border-input);
+}
+.label {
+  line-height: 1.5;
+  transition: all var(--animation-delay) 0s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: text;
+  transform: translate3d(0, -50%, 0);
+  transform-origin: 0 50%;
+  color: var(--input-label-color);
+}
+.hasValue {
+  top: -2px;
+  transform: translate3d(0, -50%, 0) scale(0.85);
+}
+.tapEdit {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  outline: none;
+  border-bottom: 2px solid var(--c-error);
+  height: var(--input-height);
+}
+.input {
+  display: none;
+}
+.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.icon img {
+  width: 100%;
+  height: var(--image-max-height);
+}

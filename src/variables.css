@@ -1,0 +1,143 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+/** ======================================
+* ! Please refer to: https://www.figma.com/file/YeiFc0kwkcMGYaDULn4cXV3x/Designs?node-id=3%3A0
+* ! to set your css variables value
+*  Common Variables
+  ->  Define base (Global) variables
+  ->  Prefix define:
+      b:     Basic
+      c:     Color
+      s:     Sizing
+      u:     Utililty
+
+====================================== */
+
+:root {
+  --unit: 1rem;
+
+  /*
+   * Typography
+   * ======================================================================== */
+
+  /**
+   * * Default font stack: https://css-tricks.com/snippets/css/system-font-stack/
+   */
+  --font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /*
+   * Layout
+   * ======================================================================== */
+
+  --max-content-width: 1000px;
+
+  /*
+   * Color
+   * ======================================================================== */
+  --c-brand: #e21838;
+  --c-text: #666;
+  --c-text-dark: #321d1d;
+  --c-text-light: #5a4141;
+  --c-text-lighter: #d2c3c3;
+  --c-text-inverse: #fff;
+  --c-label: #767676;
+  --c-ui-lighter: #fff;
+  --c-ui-light: #f4f3f3;
+  --c-ui-normal: #dfdddd;
+  --c-ui-dark: #988f90;
+  --c-ui-darker: #5e4f51;
+  --c-accent-color: var(--c-brand);
+  --c-accent-color-light: #ff5f52;
+  --c-gray: #d3d3d3;
+  --c-black: #000;
+  --c-bg: #f2f2f2;
+
+  /* Helper colors */
+
+  --c-error: var(--c-brand);
+  --c-success: #009688;
+
+  /*
+   * Font size & weight
+   * ======================================================================== */
+  --font-size: var(--unit);
+  --font-size-tiny: calc(0.625 * var(--unit));
+  --font-size-small: calc(0.875 * var(--unit));
+  --font-size-big: calc(1.25 * var(--unit));
+  --font-size-huge: calc(1.375 * var(--unit));
+  --font-weight-thin: 300;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 700;
+
+  /*
+   * Spacing
+   * ======================================================================== */
+  --b-space-3xs: 0.125rem;  /* 2px */
+  --b-space-2xs: 0.25rem;   /* 4px */
+  --b-space-xs: 0.5rem;     /* 8px */
+  --b-space-sm: 0.75rem;    /* 12px */
+  --b-space-md: 1rem;       /* 16px */
+  --b-space-lg: 1.5rem;     /* 24px */
+  --b-space-xl: 2rem;       /* 32px */
+  --b-space-2xl: 2.5rem;    /* 40px */
+  --b-space-3xl: 3rem;      /* 48px */
+  --b-space-4xl: 3.5rem;      /* 64px */
+
+  /*
+   * Font Size
+   * ======================================================================== */
+  --f-headline: 1.1rem;
+  --f-label: 1rem;
+  --f-text: 0.875rem;
+
+  /*
+   * Animation
+   * ======================================================================== */
+  --animation-delay: 300ms;
+  --animation-delay-fast: 100ms;
+  --animation-duration: 0.35s;
+  --animation-delay: calc(var(--animation-duration) / 5);
+  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+  --animation-curve-default: var(--animation-curve-fast-out-slow-in);
+
+  /*
+   * Indexes
+   * ======================================================================== */
+  --z-index-highest: 300;
+  --z-index-higher: 200;
+  --z-index-high: 100;
+  --z-index-normal: 1;
+  --z-index-low: -100;
+  --z-index-lower: -200;
+
+  /*
+   * border
+   * ======================================================================== */
+  --border-radius: 5px;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --border-hover-color: rgba(0, 0, 0, 0.2);
+
+  /*
+   * Media queries breakpoints
+==================================== */
+
+  --screen-xs-min: 480px;  /* Extra small screen / phone */
+  --screen-sm-min: 768px;  /* Small screen / tablet */
+  --screen-md-min: 992px;  /* Medium screen / desktop */
+  --screen-lg-min: 1200px; /* Large screen / wide desktop */
+}
+
+@custom-media --xs (max-width: 479px);
+@custom-media --sm (max-width: 767px);
+@custom-media --md (max-width: 991px);
+@custom-media --lg (max-width: 1199px);

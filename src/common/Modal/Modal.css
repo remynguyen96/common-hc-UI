@@ -1,0 +1,99 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+@import '../../variables.css';
+
+:root {
+  --modal-overlay-color: rgba(0, 0, 0, 0.4);
+  --icon-close-font-size: 28px;
+  --modal-padding: var(--b-space-3xs) var(--b-space-md);
+  --animation-top: -300px;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding: 0 var(--b-space-xs); /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--modal-overlay-color); /* Black w/ opacity */
+
+  /* Align center vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Modal Content */
+.modalContent {
+  position: relative;
+  background-color: var(--c-ui-lighter);
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: var(--animation-delay);
+  animation-name: animatetop;
+  animation-duration: var(--animation-delay);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: var(--animation-top);
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: var(--animation-top);
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  padding: var(--modal-padding);
+  color: var(--c-ui-lighter);
+}
+
+.modalBody {
+  padding: var(--modal-padding);
+  background-color: var(--c-ui-lightert);
+}
+
+.modalFooter {
+  color: var(--c-ui-lighter);
+}
+
+.modalFooter h4 {
+  margin-top: var(--b-space-xs);
+  margin-bottom: var(--b-space-xs);
+}
+
+.modalToggle {
+  display: inline-block;
+}

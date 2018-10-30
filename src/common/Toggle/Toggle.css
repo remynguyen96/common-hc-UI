@@ -1,0 +1,125 @@
+@import '../../variables.css';
+
+:root {
+  --c-brand-light: rgba(224, 38, 70, 0.48);
+  --c-box-shadow: 0 0 0 16px;
+  --c-color-shadow: rgba(252, 63, 63, 0.16);
+  --tl-toggle-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  --l-toggle-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --n-toggle-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  --dk-toggle-shadow: rgba(0, 108, 181, 0);
+  --spacing-top: 0.1875rem;
+  --spacing-15: 0.9375rem;
+  --spacing-18: 1.125rem;
+  --size-0: 0;
+  --second-4: .4s;
+  --second-26: .26s;
+  --width-36: 2.25rem;
+  --width-18: 1.125rem;
+  --width-12: 0.75rem;
+  --radius-40: 2.5rem;
+  --radius-50: 3.125rem;
+  --bg-light-white: #bbb;
+  --bg-light-gray: #bdbdbd;
+  --bg-dark-gray: #919191;
+}
+
+.switchInput {
+  position: absolute;
+  width: var(--size-0);
+  height: var(--size-0);
+  margin: var(--size-0);
+  padding: var(--size-0);
+  opacity: 0;
+  border: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.switch {
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: var(--second-4) all;
+  margin: 0 var(--spacing-15);
+  border-radius: var(--radius-50);
+  background: var(--bg-light-white);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  width: var(--width-36);
+  height: var(--width-12);
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-block;
+  top: var(--spacing-top);
+}
+
+.switchInput:checked ~ .switch.ripple {
+  background: var(--c-brand-light);
+  box-shadow: inset 0 0 0 var(--spacing-15) var(--c-brand-light);
+}
+
+.switchInput:checked ~ .switch::before {
+  transform: translate(var(--spacing-18), 0);
+  background: var(--c-accent-color-light);
+  box-shadow: var(--n-toggle-shadow),
+  var(--tl-toggle-shadow),
+  var(--l-toggle-shadow),
+  var(--c-box-shadow) var(--dk-toggle-shadow);
+}
+
+.switchInput:checked ~ .switch.ripple::before {
+  background: var(--c-brand);
+}
+
+.switchInput ~ .switch::before {
+  content: '';
+  transition: var(--second-26) all;
+  position: absolute;
+  left: 0;
+  top: calc(var(--spacing-top) * -1);
+  bottom: var(--b-space-3xs);
+  right: auto;
+  transform: translate(0, 0);
+  display: block;
+  width: var(--width-18);
+  height: var(--width-18);
+  border-radius: var(--radius-40);
+  background: var(--c-ui-lighter);
+  box-shadow: var(--n-toggle-shadow),
+  var(--tl-toggle-shadow),
+  var(--l-toggle-shadow),
+  var(--c-box-shadow) var(--dk-toggle-shadow);
+}
+
+.switch.ripple:active::before {
+  box-shadow: var(--n-toggle-shadow),
+  var(--tl-toggle-shadow),
+  var(--l-toggle-shadow),
+  var(--c-box-shadow) var(--c-color-shadow);
+}
+
+.switchDisable .switch::before {
+  transform: translate(var(--spacing-18), 0);
+  background-color: var(--bg-light-gray);
+  cursor: inherit;
+}
+
+.switchDisable > span, .switchDisable > input {
+  cursor: inherit;
+  opacity: 0.4;
+  background-color: var(--bg-dark-gray);
+}
+
+.switchDisable .switch.ripple:active::before {
+  box-shadow: var(--n-toggle-shadow), var(--tl-toggle-shadow), var(--l-toggle-shadow), var(--c-box-shadow) var(--dk-toggle-shadow);
+}
+
+
+

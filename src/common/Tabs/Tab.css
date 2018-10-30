@@ -1,0 +1,35 @@
+@import '../../variables.css';
+
+.tabButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: var(--b-space-xs);
+  background-color: transparent;
+}
+
+.tabBtn {
+  font-size: var(--f-text);
+  color: var(--c-text-dark);
+  font-weight: var(--font-weight-normal);
+}
+
+.tabIcon {
+  font-size: var(--font-size-huge);
+  color: var(--c-text-dark);
+  margin-bottom: var(--b-space-xs);
+}
+
+.iconError {
+  font-size: var(--f-headline);
+  padding-left: var(--b-space-3xs);
+}
+
+.error {
+  display: flex;
+  justify-content: space-around;
+  color: var(--c-brand);
+}

@@ -1,0 +1,39 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+.countdown {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  color: var(--c-text);
+  font-size: var(--f-text);
+  padding-bottom: var(--b-space-xs);
+  font-style: italic;
+}
+
+.expiredTime {
+  color: var(--c-brand);
+  font-size: var(--f-headline);
+  margin-top: var(--b-space-2xs);
+  font-style: italic;
+}
+
+.resend {
+  color: var(--c-brand);
+  font-size: var(--f-label);
+  font-style: italic;
+  margin-top: var(--b-space-2xs);
+  text-decoration: underline;
+}
+
+.smallText {
+  font-size: var(--f-sm-text);
+  margin-top: var(--b-space-2xs);
+}

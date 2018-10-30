@@ -1,0 +1,125 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+@import '../../variables.css';
+
+:root {
+  --unit: 1rem;
+  --color-black: rgb(0, 0, 0);
+  --color-primary: #e21838;
+  --radio-field-margin-bottom: var(--unit);
+  --radio-button-size: var(--b-space-md);
+  --radio-inner-margin: calc(var(--radio-button-size) / 4);
+  --radio-inner-color: var(--color-primary);
+  --radio-focus-color: color-mod(var(--color-black) a(10%));
+  --radio-checked-focus-color: color-mod(var(--color-primary) a(26%));
+  --radio-text-color: var(--color-black);
+  --radio-disabled-color: color-mod(var(--color-black) a(26%));
+}
+
+.radio {
+  border: calc(0.2 * var(--unit)) solid var(--radio-text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: var(--radio-button-size);
+  position: relative;
+  vertical-align: top;
+  width: var(--radio-button-size);
+  outline: none;
+
+  @apply --reset;
+}
+
+.radio::before {
+  background-color: var(--radio-inner-color);
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0);
+}
+
+.radio .ripple {
+  background-color: var(--radio-inner-color);
+  opacity: 0.3;
+  transition-duration: 650ms;
+}
+
+.radioChecked {
+  border: calc(0.2 * var(--unit)) solid var(--radio-inner-color);
+  composes: radio;
+}
+
+.radioChecked::before {
+  transform: scale(0.65);
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  height: var(--radio-button-size);
+  margin-bottom: var(--radio-field-margin-bottom);
+  position: relative;
+  white-space: nowrap;
+}
+
+.text {
+  color: var(--radio-text-color);
+  display: inline-block;
+  line-height: var(--radio-button-size);
+  padding-left: var(--b-space-xs);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.disabled {
+  composes: field;
+}
+
+.disabled .text {
+  color: var(--radio-disabled-color);
+}
+
+.disabled .radio {
+  border-color: var(--radio-disabled-color);
+  cursor: auto;
+}
+
+.disabled .radioChecked {
+  border-color: var(--radio-disabled-color);
+  cursor: auto;
+}
+
+.disabled .radioChecked::before {
+  background-color: var(--radio-disabled-color);
+}
+
+.input {
+  appearance: none;
+  border: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  width: 0;
+}
+
+.input:focus ~ .radio {
+  box-shadow: 0 0 0 var(--unit) var(--radio-focus-color);
+}
+
+.input:focus ~ .radioChecked {
+  box-shadow: 0 0 0 var(--unit) var(--radio-checked-focus-color);
+}
+

@@ -1,0 +1,103 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+:root {
+  --root: var(--b-space-md);
+  --container-height: 100%;
+  --container-background-color: var(--c-text-lighter);
+  --capture-button-height: calc(var(--root) * 3);
+  --capture-button-width: calc(var(--root) * 3);
+  --capture-button-border-radius: 50%;
+  --footer-container-height: calc(var(--root) * 5);
+  --face-oval-height: 250px;
+  --face-oval-width: 200px;
+  --face-oval-top: 15%;
+}
+
+.container {
+  height: var(--container-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-high);
+}
+
+.faceOval {
+  width: var(--face-oval-width);
+  height: var(--face-oval-height);
+  background: transparent;
+  border: 2px solid var(--c-accent-color);
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  position: absolute;
+  top: 15%;
+}
+
+.cameraContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--container-background-color);
+}
+
+.preview {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.captureContainer {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  z-index: 1;
+  bottom: var(--root);
+  width: 100%;
+  outline: none;
+}
+
+.borderCaptureButton {
+  border-radius: var(--capture-button-border-radius);
+  border: 2px solid var(--c-text-inverse);
+}
+
+.captureButton {
+  background-color: var(--c-text-inverse);
+  border-radius: var(--capture-button-border-radius);
+  height: var(--capture-button-height);
+  width: var(--capture-button-width);
+  margin: var(--b-space-2xs);
+}
+
+.captureImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footerContainer {
+  padding: var(--b-space-xs);
+  background-color: var(--c-ui-normal);
+  height: var(--footer-container-height);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerButton {
+  margin: 0 var(--b-space-xs);
+}

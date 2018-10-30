@@ -1,0 +1,28 @@
+:root {
+  --help-icon-right: 5px;
+}
+
+.datepicker {
+  position: relative;
+}
+
+.datepicker > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.datepicker .helpIcon {
+  z-index: 5;
+  right: var(--help-icon-right);
+  bottom: calc(var(--b-space-xs) * -1);
+  line-height: 0;
+}
+
+.datepicker .helpIcon span {
+  font-size: var(--f-xs-icon);
+}
+
+.input > span[role='button'] {
+  margin-right: var(--b-space-2xl);
+}

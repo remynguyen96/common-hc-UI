@@ -1,0 +1,38 @@
+:root {
+  --datepicker-dialog-bg: #f7f7f7;
+}
+.datepicker {
+  width: 100%;
+  z-index: var(--z-index-highest);
+  text-align: center;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  background-color: var(--datepicker-dialog-bg);
+  margin: 0 var(--b-space-xl);
+  border-radius: var(--border-radius);
+}
+.datepickerHeader {
+  display: flex;
+  width: 100%;
+  padding: var(--b-space-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: var(--font-weight-bold);
+}
+.datepickerHeader > span {
+  flex: 1;
+}
+.datepickerNavbar {
+  padding: var(--b-space-md) 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--c-accent-color);
+  cursor: pointer;
+  color: var(--c-accent-color);
+  font-weight: var(--font-weight-bold);
+}
+.datepickerContent {
+  display: flex;
+  padding: var(--b-space-2xs) 0;
+}

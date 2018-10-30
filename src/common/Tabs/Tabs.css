@@ -1,0 +1,32 @@
+@import '../../variables.css';
+
+:root {
+  --position--underline: 65%;
+  --width-tabs: 100%;
+}
+
+.tabList {
+  list-style: none;
+  width: var(--width-tabs);
+  position: relative;
+  margin: 0;
+  white-space: nowrap;
+  padding-bottom: var(--b-space-md);
+  outline: none;
+  overflow-x: auto;
+}
+
+.tabItem {
+  display: inline-flex;
+  margin-bottom: var(--b-space-2xs);
+  padding: 0 var(--b-space-2xs);
+}
+
+.tabUnderline {
+  position: absolute;
+  z-index: 1;
+  top: var(--position--underline);
+  left: 0;
+  right: 0;
+  border-bottom: var(--b-space-3xs) solid var(--c-accent-color-light);
+}

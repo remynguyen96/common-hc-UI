@@ -1,0 +1,131 @@
+.container {
+  border-bottom: solid 2px #dcdcdc;
+  position: relative;
+  height: var(--b-space-4xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.container .helpIcon span {
+  font-size: var(--f-xs-icon);
+}
+
+.container .helpIcon {
+  line-height: 0;
+  position: absolute;
+  right: 5px;
+  bottom: -2px;
+}
+
+.imagelist {
+  height: 50px;
+  max-width: calc(100% - 33px);
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: var(--b-space-2xl);
+}
+
+.imagelist > div {
+  position: relative;
+  margin: 5px 10px 5px 0;
+}
+
+.imagelist::-webkit-scrollbar {
+  display: none;
+}
+
+.container > div > div > img {
+  height: 40px;
+}
+
+.container > label {
+  overflow: hidden;
+  font-size: var(--f-text);
+  transition: all var(--animation-delay) 0s;
+  position: absolute;
+  bottom: var(--b-space-xs);
+  left: var(--b-space-2xl);
+  color: var(--c-label);
+  cursor: text;
+}
+
+.hasValue {
+  bottom: 48px !important;
+  font-size: 11px !important;
+}
+
+.hasError {
+  border-bottom-color: var(--c-error) !important;
+}
+
+.icon {
+  color: var(--c-brand);
+  font-size: var(--f-small-icon);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.camerabutton {
+  position: absolute;
+  height: var(--b-space-xl);
+  width: var(--b-space-xl);
+  bottom: var(--b-space-xs);
+  left: 0;
+  overflow: hidden;
+}
+
+.camerabutton > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 100px;
+  opacity: 0;
+}
+
+.hasSuccess .imagelist,
+.hasError .imagelist {
+  max-width: calc(100% - 60px);
+}
+
+.rtl .camerabutton {
+  left: 0;
+  bottom: 8px;
+}
+
+.rtl .imagelist {
+  flex-direction: row-reverse;
+  margin-left: 60px;
+}
+
+.iconError {
+  color: var(--c-brand);
+}
+
+.iconSuccess {
+  color: var(--c-success);
+}
+
+.iconError,
+.iconSuccess {
+  position: absolute;
+  right: 0;
+  bottom: var(--b-space-lg);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+.iconError i {
+  font-size: var(--f-xs-icon);
+}
+
+.iconSuccess i {
+  font-size: var(--f-xs-icon);
+}
+
+

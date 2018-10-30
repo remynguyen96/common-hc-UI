@@ -1,0 +1,64 @@
+:root {
+  --datepicker-viewport-height: 200px;
+  --datepicker-viewport-background:
+    linear-gradient(
+      #f7f7f7,
+      rgba(245, 245, 245, 0) 52%,
+      rgba(245, 245, 245, 0) 48%,
+      #f7f7f7
+    );
+  --datepicker-wheel-height: 40px;
+  --datepicker-wheel-margin-top: calc(var(--datepicker-wheel-height) * -0.5);
+  --datepicker-scroll-height: var(--datepicker-wheel-height);
+}
+
+.datepickerCol {
+  flex: 1;
+  margin: 0;
+}
+
+.datepickerViewport {
+  height: var(--datepicker-viewport-height);
+  position: relative;
+  overflow: hidden;
+}
+
+.datepickerViewport::after {
+    content: '';
+    position: absolute;
+    z-index: var(--z-index-normal);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: var(--datepicker-viewport-background);
+}
+
+.datepickerWheel {
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  height: var(--datepicker-wheel-height);
+  margin-top: var(--datepicker-wheel-margin-top);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--c-ui-light);
+}
+
+.datepickerScroll {
+  padding: 0;
+  list-style-type: none;
+}
+
+.datepickerScroll > li {
+    height: var(--datepicker-scroll-height);
+    line-height: var(--datepicker-scroll-height);
+    font-size: var(--font-size-huge);
+    cursor: pointer;
+    color: var(--ios-color);
+}
+
+.datepickerScroll > li.disabled {
+  color: var(--ios-disabled-color);
+}

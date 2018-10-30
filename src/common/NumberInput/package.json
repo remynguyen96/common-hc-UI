@@ -1,0 +1,6 @@
+{
+  "name": "NumberInput",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./NumberInput.js"
+}

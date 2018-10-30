@@ -1,0 +1,22 @@
+:root {
+  --image-max-height: calc(2 * var(--unit));
+}
+.container {
+  position: relative;
+}
+.input {
+  height: var(--b-space-2xl);
+}
+.input > span[role='button'] {
+  margin-right: var(--b-space-2xl);
+}
+.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--z-index-high);
+}
+.icon img {
+  width: 100%;
+  height: var(--image-max-height);
+}

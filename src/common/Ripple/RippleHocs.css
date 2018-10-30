@@ -1,0 +1,5 @@
+.btnWrapper {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+@import '../../variables.css';
+
+.tabContent {
+  font-size: var(--f-text);
+  line-height: 2;
+  color: var(--c-text-dark);
+}

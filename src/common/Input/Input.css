@@ -1,0 +1,161 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+ @import '../../variables.css';
+
+ :root {
+   --color-border-input: #dcdcdc;
+   --underline-height: 2px;
+   --top-icon: -5px;
+   --translate-postion: 21px;
+   --input-text-padding: 6px;
+ }
+ 
+ .wrapper {
+   position: relative;
+   margin-top: var(--b-space-md);
+   margin-bottom: var(--b-space-md);
+ }
+ 
+ .input {
+   border: none;
+   border-bottom: solid 2px var(--color-border-input);
+   min-height: var(--b-space-2xl);
+   border-top-left-radius: var(--border-radius);
+   border-top-right-radius: var(--border-radius);
+   width: 100%;
+   overflow: hidden;
+   line-height: 1.5;
+   position: relative;
+   z-index: 2;
+   outline: none;
+   background: transparent;
+   box-shadow: none;
+   font-size: var(--f-text);
+   color: var(--c-text);
+ }
+ 
+ /* Change input background to transparent on autocomplete form */
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover,
+ input:-webkit-autofill:focus,
+ input:-webkit-autofill:active {
+   -webkit-animation: autofill 0s forwards;
+   animation: autofill 0s forwards;
+ }
+ 
+ @keyframes autofill {
+   100% {
+     background: transparent;
+     color: inherit;
+   }
+ }
+ 
+ @-webkit-keyframes autofill {
+   100% {
+     background: transparent;
+     color: inherit;
+   }
+ }
+ 
+ .underline {
+   position: absolute;
+   bottom: 0;
+   z-index: 2;
+   width: 100%;
+   height: var(--underline-height);
+   background-color: var(--c-brand);
+   transform: scale3d(0, 0, 0);
+   transition: all var(--animation-delay) ease 0s;
+   will-change: transform;
+ }
+ 
+ .input:focus ~ .underline {
+   transform: scale3d(1, 1, 1);
+ }
+ 
+ .icon {
+   color: var(--c-brand);
+   position: absolute;
+   left: var(--b-space-xs);
+   z-index: 4;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+ 
+ .label {
+   overflow: hidden;
+   font-size: var(--f-text);
+   line-height: 1.5;
+   transition: all var(--animation-delay) 0s;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   z-index: 1;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   color: var(--c-label);
+   cursor: text;
+   transform: translate3d(0, -50%, 0);
+   transform-origin: 0 50%;
+ }
+ 
+ .hasValue .label,
+ .input:focus ~ .label {
+   transform: translate3d(0, -50%, 0) scale(0.85);
+   top: -2px;
+ }
+ 
+ .inputIcon {
+   padding-left: var(--b-space-2xl);
+ }
+ 
+ .inputIcon:focus ~ .label {
+   left: var(--input-text-padding);
+ }
+ 
+ .hasValue .inputIcon ~ .label {
+   padding-left: var(--b-space-3xl);
+ }
+ 
+ .hasValue .inputIcon:focus ~ .label {
+   padding-left: var(--b-space-2xl);
+ }
+ 
+ .iconError,
+ .iconSuccess {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 99;
+ }
+
+ .iconError i {
+  font-size: var(--f-xs-icon);
+ }
+
+ .iconSuccess i {
+  font-size: var(--f-xs-icon);
+ }
+ 
+ .iconError {
+   color: var(--c-error);
+ }
+ 
+ .iconSuccess {
+   color: var(--c-success);
+ }
+ 
+ .hasError .input {
+   padding-right: var(--b-space-2xl);
+   border-bottom-color: var(--c-error);
+ }
+ 

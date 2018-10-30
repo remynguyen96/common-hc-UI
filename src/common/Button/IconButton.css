@@ -1,0 +1,111 @@
+/**
+ * Home Credit (https://www.homecredit.vn/)
+ *
+ * Copyright © 2018-present HomeCredit, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+@import '../../variables.css';
+
+:root {
+  --color-black: #000;
+  --color-primary: #e21838;
+  --color-white: #fff;
+  --palette-grey-900: rgb(33, 33, 33);
+  --button-border-radius: calc(0.2 * var(--unit));
+  --button-height: var(--input-height);
+  --button-width: calc(3 * var(--unit));
+  --button-toggle-font-size: calc(2 * var(--unit));
+  --button-primary-color: var(--color-primary);
+  --button-primary-color-hover: color-mod(var(--color-primary) a(20%));
+  --button-primary-color-contrast: var(--color-primary-contrast);
+  --button-neutral-color: var(--color-white);
+  --button-neutral-color-contrast: var(--palette-grey-900);
+  --button-neutral-color-hover: color-mod(var(--palette-grey-900) a(20%));
+  --button-disabled-text-color: color-mod(var(--color-black) a(26%));
+  --button-disabled-background-color: color-mod(var(--color-black) a(12%));
+  --button-disabled-text-color-inverse: color-mod(var(--color-black) a(54%));
+  --button-disabled-background-inverse: color-mod(var(--color-black) a(8%));
+  --button-squared-icon-margin: calc(0.6 * var(--unit));
+}
+
+.icon {
+  margin-right: var(--button-squared-icon-margin);
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  height: var(--button-height);
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+}
+
+.smallIcon {
+  font-size: var(--f-small-icon);
+}
+
+.toggle {
+  composes: button;
+  background: transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  width: var(--button-width);
+  padding: 1px 7px 2px 7px; /* Fix for IOS only */
+}
+
+.icon, svg {
+    font-size: var(--button-toggle-font-size);
+    vertical-align: top;
+}
+
+.toggle > .smallIcon {
+  font-size: var(--f-small-icon);
+}
+
+.inverse.toggle {
+    color: var(--button-neutral-color);
+}
+
+.inverse.toggle:focus:not(:active) {
+    background: var(--button-neutral-color-hover);
+}
+
+.primary:not([disabled]).toggle {
+    color: var(--button-primary-color);
+}
+
+.primary:not([disabled]).toggle:focus:not(:active) {
+    background: var(--button-primary-color-hover);
+}
+
+.neutral:not([disabled]).toggle {
+  color: var(--button-neutral-color);
+}
+
+.neutral:not([disabled]).toggle:focus:not(:active) {
+  background: var(--button-neutral-color-hover);
+}
+
+.neutral:not([disabled]).inverse.toggle {
+  color: var(--button-neutral-color);
+}
+.neutral:not([disabled]).inverse.toggle:focus:not(:active) {
+  background: var(--button-neutral-color-hover);
+}
+
+.neutral.inverse[disabled] {
+  background-color: var(--button-disabled-background-inverse);
+  color: var(--button-disabled-text-color-inverse);
+}
