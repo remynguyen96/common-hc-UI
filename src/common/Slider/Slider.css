@@ -10,13 +10,13 @@
  @import '../../variables.css';
 
  :root {
-  --tooltip-width: 2.5rem;
-  --tooltip-height: 2.5rem;
-  --slider-bar-height: 0.3125rem;
-  --slider-bar-radius: 0.3125rem;
-  --slider-button-width: 1.25rem;
-  --slider-button-height: 1.25rem;
-  --top-tooltip: -3.4375rem;
+   --tooltip-width: 40px;
+   --tooltip-height: 40px;
+   --slider-bar-height: 5px;
+   --slider-bar-radius: 5px;
+   --slider-button-width: 20px;
+   --slider-button-height: 20px;
+   --top-tooltip: -55px;
  }
  
  /**

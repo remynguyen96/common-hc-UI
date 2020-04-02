@@ -103,7 +103,7 @@ class Slider extends PureComponent {
   /**
    * Calculate position of slider based on its value
    * @param  {number} value - Current value of slider
-   * @return {number} pos - Calculated position of slider based on value
+   * @return {position} pos - Calculated position of slider based on value
    */
   getPositionFromValue = value => {
     const { limit } = this.state;
@@ -111,8 +111,9 @@ class Slider extends PureComponent {
     const diffMaxMin = max - min;
     const diffValMin = value - min;
     const percentage = diffValMin / diffMaxMin;
+    const pos = Math.round(percentage * limit);
 
-    return Math.round(percentage * limit);
+    return pos;
   };
 
   /**
@@ -246,8 +247,9 @@ class Slider extends PureComponent {
       : e.touches[0][clientCoordinateStyle];
     const direction = node.getBoundingClientRect()[directionStyle];
     const pos = coordinate - direction - grab;
+    const value = this.getValueFromPosition(pos);
 
-    return this.getValueFromPosition(pos);
+    return value;
   };
 
   /**

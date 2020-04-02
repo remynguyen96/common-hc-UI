@@ -9,7 +9,7 @@
 /* eslint-disable css-modules/no-undef-class */
 
 import React, { Component } from 'react';
-import { string, func, bool, arrayOf, instanceOf, oneOfType, object } from 'prop-types';
+import PropTypes from 'prop-types';
 import { isDate, noop } from 'lodash';
 import {
   DATE_FORMAT,
@@ -18,8 +18,8 @@ import {
   MIN_DATE,
   MAX_DATE,
 } from 'constants/date';
-import { convertDate } from 'utils/time';
 import classNames from 'classnames';
+import { convertDate } from 'utils/time';
 import DatePickerDialog from './DatePickerDialog';
 import Overlay from '../Overlay';
 import Input from '../Input';
@@ -28,20 +28,19 @@ import s from './DatePicker.css';
 
 class DatePicker extends Component {
   static propTypes = {
-    errorMsg: string,
-    label: string,
-    name: string,
-    onChange: func,
-    touched: oneOfType([bool, object]),
-    showFormat: string,
-    dateFormat: arrayOf(string),
-    maxDate: instanceOf(Date),
-    minDate: instanceOf(Date),
-    value: oneOfType([instanceOf(Date), string]),
-    onClickHelpIcon: func,
-    leftIcon: bool,
-    require: bool,
-    className: string,
+    errorMsg: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    touched: PropTypes.bool,
+    showFormat: PropTypes.string,
+    dateFormat: PropTypes.arrayOf(PropTypes.string),
+    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.instanceOf(Date),
+    value: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string]),
+    onClickHelpIcon: PropTypes.func,
+    leftIcon: PropTypes.bool,
+    require: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -55,7 +54,6 @@ class DatePicker extends Component {
     value: DEFAULT_DATE,
     minDate: MIN_DATE,
     maxDate: MAX_DATE,
-    className: '',
     onClickHelpIcon: noop,
     leftIcon: false,
     require: false,
@@ -87,9 +85,7 @@ class DatePicker extends Component {
   };
 
   handleSelect = value => {
-    const { onChange, name } = this.props;
-
-    onChange && onChange(name, value);
+    this.props.onChange && this.props.onChange(this.props.name, value);
     this.setState({ active: false });
   };
 
@@ -105,7 +101,6 @@ class DatePicker extends Component {
       onClickHelpIcon,
       leftIcon,
       require,
-      className,
     } = this.props;
     const { active } = this.state;
     const { date, value } = this.getValue();
@@ -115,7 +110,6 @@ class DatePicker extends Component {
     return (
       <div className={classNames(s.datepicker, className)}>
         <Input
-          id={name}
           errorMsg={errorMsg}
           touched={touched}
           label={label}

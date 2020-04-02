@@ -8,12 +8,12 @@
  */
 /* eslint-disable jsx-a11y/label-has-for, react/require-default-props, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions  */
 
-import React, { PureComponent } from 'react';
-import { string, oneOfType, bool, number, func, object } from 'prop-types';
+import React from 'react';
+import { string, oneOfType, bool, number, func } from 'prop-types';
 import classNames from 'classnames';
 import { isNil, isEmpty, get, trim } from 'lodash';
-
 import Popover from '../Popover';
+
 import s from './Input.css';
 
 const getClassName = (orginalClass, additionalClass, conditional) =>
@@ -21,7 +21,7 @@ const getClassName = (orginalClass, additionalClass, conditional) =>
 
 const errorIcon = 'error_outline';
 const successIcon = 'check';
-class Input extends PureComponent {
+class Input extends React.PureComponent {
   /**
    * Input propTypes
    */
@@ -29,7 +29,6 @@ class Input extends PureComponent {
     id: string,
     type: string,
     name: string,
-    className: string,
     value: oneOfType([string, number]),
     label: string,
     disabled: bool,
@@ -38,7 +37,7 @@ class Input extends PureComponent {
     onChange: func,
     onBlur: func,
     errorMsg: string,
-    touched: oneOfType([bool, object]),
+    touched: bool,
     placeholder: string,
     onMouseDown: func,
     maxLength: number,
@@ -48,7 +47,6 @@ class Input extends PureComponent {
 
   static defaultProps = {
     id: '',
-    className: null,
     errorMsg: '',
     touched: false,
     type: 'text',
@@ -162,7 +160,6 @@ class Input extends PureComponent {
       <div className={wrapperClassName}>
         <i className={iconClassName}>{icon}</i>
         <input
-          id={id}
           ref={this.setInput}
           placeholder={placeholder}
           type={type}

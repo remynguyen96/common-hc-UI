@@ -9,15 +9,16 @@
 
 /* eslint-disable jsx-a11y/label-has-for, css-modules/no-unused-class, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { bool, string, func } from 'prop-types';
 import classNames from 'classnames';
 
 import { noop } from 'lodash';
-import Check from './Check';
-import s from './Check.css';
 
-class Checkbox extends PureComponent {
+import s from './Check.css';
+import Check from './Check';
+
+class Checkbox extends React.Component {
   static propTypes = {
     checked: bool,
     className: string,
